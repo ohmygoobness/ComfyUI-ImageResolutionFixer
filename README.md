@@ -1,5 +1,7 @@
 # Image Resolution Fixer - ComfyUI Custom Node
 
+> A lightweight ComfyUI node that intelligently rounds image dimensions to compatible resolutions (divisible by 2, 4, 8, 16, 32, 64, etc.) using smart reflection mirroring. Solves tensor size mismatch errors without quality loss.
+
 A ComfyUI custom node that fixes image resolutions to be compatible with models that require specific dimension constraints (e.g., divisible by 8, 16, etc.). This node makes **minimal changes** to your images - just rounding up dimensions by a few pixels to the nearest compatible size.
 
 ![Preview](preview.png)
@@ -35,6 +37,31 @@ The smaller the multiple, the fewer pixels added. Perfect for fixing tensor mism
 
 ## Installation
 
+### Method 1: Git Clone (Recommended)
+
+1. Navigate to your ComfyUI custom nodes directory:
+   ```bash
+   cd ComfyUI/custom_nodes/
+   ```
+
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/ohmygoobness/ComfyUI-ImageResolutionFixer.git
+   ```
+
+3. Install dependencies (if needed):
+   ```bash
+   pip install opencv-python
+   ```
+   Or for ComfyUI portable:
+   ```bash
+   python_embeded\python.exe -m pip install opencv-python
+   ```
+
+4. Restart ComfyUI
+
+### Method 2: Manual Installation
+
 1. Navigate to your ComfyUI custom nodes directory:
    ```bash
    cd ComfyUI/custom_nodes/
@@ -42,11 +69,11 @@ The smaller the multiple, the fewer pixels added. Perfect for fixing tensor mism
 
 2. Create a new directory for this node:
    ```bash
-   mkdir ImageResolutionFixer
-   cd ImageResolutionFixer
+   mkdir ComfyUI-ImageResolutionFixer
+   cd ComfyUI-ImageResolutionFixer
    ```
 
-3. Copy the `image_resolution_fixer.py` file to this directory
+3. Copy the `image_resolution_fixer.py` and `__init__.py` files to this directory
 
 4. Restart ComfyUI
 
@@ -199,8 +226,4 @@ Video models have more stringent requirements than image models due to both Spat
 
 ## License
 
-This custom node is provided as-is for use with ComfyUI.
-
-## Credits
-
-Created to solve tensor size mismatch errors in ComfyUI workflows.
+This project is licensed under the Apache-2.0 License.
