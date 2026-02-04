@@ -2,6 +2,8 @@
 
 A ComfyUI custom node that fixes image resolutions to be compatible with models that require specific dimension constraints (e.g., divisible by 8, 16, etc.). This node makes **minimal changes** to your images - just rounding up dimensions by a few pixels to the nearest compatible size.
 
+![Preview](preview.png)
+
 ## Dependencies
 
 This node requires:
